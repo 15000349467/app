@@ -1,0 +1,18 @@
+<ion-view>
+    <ion-content>
+        <div class="card">
+            <ion-item class="item-thumbnail-left item-button-right item-text-wrap">
+                <img ng-src="{{book.imgsrc}}"/>
+                <h2>{{book.title}}</h2>
+                <p>ISBN:{{book.isbn}},定价:{{book.price | currency:"￥"}}</p>
+                <p>{{book.desc}}</p>
+                <button class="button" ng-click="add(book)">
+                    <i class="icon ion-ios-cart-outline positive"></i>
+                </button>
+            </ion-item>
+            <ion-item class="item-image">
+                <img ng-src="{{book.imgsrc }}" width="400" height="400"/>
+            </ion-item>
+        </div>
+    </ion-content>
+</ion-view>

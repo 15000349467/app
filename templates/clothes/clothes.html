@@ -1,0 +1,25 @@
+<ion-view>
+
+    <ion-content>
+        <ion-slide-box does-continue="true" slide-interval="1500" auto-play="true">
+            <ion-slide ng-repeat="imgs in silderBox" ng-click="target(imgs.state)">
+                <img ng-src="{{imgs.imgUrl}}" style="width: 100%;height:250px">
+            </ion-slide>
+        </ion-slide-box>
+        <ion-list>
+
+            <!--<ion-item class="item-avatar" ng-repeat="product in products" ui-sref="tabs.detail">-->
+            <!--如果传参的话，只能使用url导航携带参数-->
+            <ion-item class="item-avatar " ng-repeat="product in products"
+                      href="#/tabs/detail?title={{product.title}}">
+                <img ng-src="{{product.imgsrc}}"/>
+                <h2>{{product.title}}</h2>
+                <p>{{product.desc}}</p>
+            </ion-item>
+        </ion-list>
+        <ion-infinite-scroll on-infinite="loadMore()" immediate-check="false"></ion-infinite-scroll>
+
+    </ion-content>
+    <div id="top" ng-click="top()">top</div>
+
+</ion-view>

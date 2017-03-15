@@ -1,0 +1,17 @@
+<ion-view>
+    <ion-content>
+        <div class="card">
+            <ion-item class="item-avatar item-button-right">
+                <img ng-src="{{product.imgsrc}}"/>
+                <h2>{{product.title}}</h2>
+                <p>{{product.desc}}</p>
+                <button class="button" ng-click="add(product)">
+                    <i class="icon ion-ios-cart-outline positive"></i>
+                </button>
+            </ion-item>
+            <ion-item class="item-image">
+                <img ng-src="{{product.imgsrc | picFilter}}"/>
+            </ion-item>
+        </div>
+    </ion-content>
+</ion-view>

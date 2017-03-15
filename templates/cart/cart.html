@@ -1,0 +1,37 @@
+<ion-view >
+    <ion-content >
+        <div class="row">
+            <div class="col">预览</div>
+
+            <div class="col">名称</div>
+            <div class="col">单价</div>
+            <div class="col">数量</div>
+            <div class="col">小计</div>
+            <div class="col">操作</div>
+        </div>
+        <div class="row row-center" ng-repeat="item in cart">
+            <div class="col">
+                <img ng-src="{{item.product.imgsrc}}" style="width: 50%;height: 50%">
+            </div>
+
+
+            <div class="col">{{item.product.title}}</div>
+            <div class="col">{{item.product.price | currency:"￥"}}</div>
+            <div class="col">{{item.number}}</div>
+            <div class="col">{{item.product.price * item.number | currency:"￥"}}</div>
+            <div class="col">
+                <button class="button button-icon" ng-click="remove(item.product.title)">
+                    <i class="icon ion-ios-close-empty" ></i>
+                </button>
+            </div>
+        </div>
+        <hr/>
+        <div class="row row-center">
+            <div class="col"></div>
+            <div class="col">总计:{{money() | currency:"￥"}}</div>
+        </div>
+        <div class="show" ng-show="cart.length>0 ? false:true">
+            购物车空空如也，赶紧去 <a ui-sref="tabs.clothes" style="color: red">淘宝</a> 淘宝吧
+        </div>
+    </ion-content>
+</ion-view>
